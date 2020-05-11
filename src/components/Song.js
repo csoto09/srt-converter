@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import moment from "moment"
+// TODO: replace moment with lighter alternative like dayjs
 
 const Input = () => {
   const [input, setInput] = useState("")
