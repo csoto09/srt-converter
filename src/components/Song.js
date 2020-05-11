@@ -83,12 +83,16 @@ const Input = () => {
         </div>
       </div>
       <div className='field'>
+        <label htmlFor='convert' className='is-sr-only'>
+          Paste Lyrics or Subtitles Here
+        </label>
         <div className='control'>
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className='textarea has-fixed-size'
             rows='20'
+            id='convert'
           />
         </div>
       </div>
