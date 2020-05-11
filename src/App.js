@@ -1,15 +1,20 @@
 import React from "react"
 import Song from "./components/Song"
 import Header from "./components/Header"
-// import SongTitle from "./components/SongTitle"
-import "./App.css"
+import Container from "./layout/Container"
 
 function App() {
   return (
-    <div>
-      <Header value='Lyric Fixer-Upper Converter Thingy!!' />
-      <Song />
-    </div>
+    <section className='section'>
+      <div className='columns is-centered'>
+        <div className='column is-half-desktop is-one-third-widescreen is-half-tablet'>
+          <Container>
+            <Header value='Lyric Fixer-Upper Converter Thingy!!' />
+            <Song />
+          </Container>
+        </div>
+      </div>
+    </section>
   )
 }
 
