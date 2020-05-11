@@ -1,5 +1,7 @@
 import React from "react"
 
-const Header = (props) => <h1>{props.value}</h1>
+const Header = (props) => (
+  <header className='title has-text-centered'>{props.value}</header>
+)
 
 export default Header

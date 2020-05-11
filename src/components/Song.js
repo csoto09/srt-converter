@@ -1,24 +1,6 @@
 import React, { useState } from "react"
-import styled, { css } from "styled-components"
-import Container from "./Container"
 import moment from "moment"
-
-const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 auto;
-  padding: 0.25em 1em;
-  display: block;
-  font-size: 1.25em;
-  ${(props) =>
-    props.primary &&
-    css`
-      background: palevioletred;
-      color: white;
-    `};
-`
+// TODO: replace moment with lighter alternative like dayjs
 
 const Input = () => {
   const [input, setInput] = useState("")
@@ -78,25 +60,46 @@ const Input = () => {
 
   return (
     <form onSubmit={downloadFile}>
-      <Container>
-        <label htmlFor='title'>Enter song name here:</label>
+      <div className='field is-horizontal'>
+        <div className='field-label is-normal'>
+          <label htmlFor='title' className='label'>
+            File Name:
+          </label>
+        </div>
+        <div className='field-body'>
+          <div className='field'>
+            <div className='control'>
+              <input
+                type='text'
+                name='title'
+                id='title'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className='input'
+                placeholder='Enter file name or song title here'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='field'>
+        <div className='control'>
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className='textarea has-fixed-size'
+            rows='20'
+          />
+        </div>
+      </div>
+
+      <div className='buttons is-centered'>
         <input
-          type='text'
-          name='title'
-          id='title'
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          type='submit'
+          value='Submit'
+          className='button is-success is-rounded is-centered'
         />
-      </Container>
-      <Container>
-        <textarea
-          rows='30'
-          cols='50'
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-      </Container>
-      <Button type='submit'>Submit</Button>
+      </div>
     </form>
   )
 }
