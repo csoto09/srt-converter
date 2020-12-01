@@ -1,4 +1,3 @@
-import React from "react"
 import Song from "./components/Song"
 import Header from "./components/Header"
 import Container from "./layout/Container"

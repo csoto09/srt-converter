@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react";
 import moment from "moment"
 // TODO: replace moment with lighter alternative like dayjs
 

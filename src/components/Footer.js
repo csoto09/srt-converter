@@ -1,4 +1,3 @@
-import React from "react"
 import bulmaLogo from "../made-with-bulma.png"
 
 const Footer = (props) => (
